@@ -58,7 +58,7 @@
                 "diskSizeGB": "[parameters('virtualMachineSettings').dataDisks.size[copyIndex('dataDisks')]]",
                 "lun": "[copyIndex('dataDisks')]",            
                 "managedDisk": {
-                  "storageAccountType": "[parameters('virtualMachineSettings').dataDisks.type[copyIndex('dataDisks')]]]"
+                  "storageAccountType": "[parameters('virtualMachineSettings').dataDisks.type[copyIndex('dataDisks')]]"
                 }
               }
             }
