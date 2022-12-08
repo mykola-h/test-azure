@@ -27,7 +27,7 @@
       {
       "type": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
       "name": "[parameters('virtualMachineSettings').name]",
-      "apiVersion": "2017-03-01-preview",
+      "apiVersion": "2022-02-01",
       "location": "[parameters('location')]",
       "properties": {
         "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachineSettings').name)]",

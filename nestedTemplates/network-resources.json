@@ -35,7 +35,7 @@
     {
       "condition": "[equals(parameters('virtualMachinesSettings')[copyIndex()].publicIpSettings.newOrExistingOrNone, 'new')]",
       "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "name": "[parameters('virtualMachinesSettings')[copyIndex()].publicIpSettings.name]",
       "location": "[parameters('location')]",
       "sku": {
@@ -56,7 +56,7 @@
     {
       "condition": "[parameters('virtualMachinesSettings')[copyIndex()].deployVm]",
       "type": "Microsoft.Network/networkSecurityGroups",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "name": "[variables('networkSecurityGroupsNames')[copyIndex()]]",
       "location": "[parameters('location')]",
       "properties": {
@@ -88,7 +88,7 @@
     },
     {
       "type": "Microsoft.Network/virtualNetworks",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "name": "[parameters('networkSettings').virtualNetworkName]",
       "location": "[parameters('location')]",
       "properties": {
@@ -101,7 +101,7 @@
     },
     {
       "type": "Microsoft.Network/virtualNetworks/subnets",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2021-08-01",
       "name": "[concat(parameters('networkSettings').virtualNetworkName, '/', parameters('networkSettings').virtualSubNetworkName)]",
       "location": "[parameters('location')]",
       "dependsOn": [
@@ -114,7 +114,7 @@
     {
       "condition": "[parameters('virtualMachinesSettings')[copyIndex()].deployVm]",
       "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "name": "[variables('networkInterfacesNames')[copyIndex()]]",
       "dependsOn": [
         "publicIpAddressCopy",

@@ -21,7 +21,7 @@
     {
       "name": "[parameters('sqlInstanceSettings').instanceName]",
       "type": "Microsoft.Sql/servers",
-      "apiVersion": "2020-08-01-preview",
+      "apiVersion": "2021-11-01",
       "location": "[parameters('location')]",
       "identity": {
         "type": "SystemAssigned"
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Sql/servers/firewallRules",
-      "apiVersion": "2015-05-01-preview",
+      "apiVersion": "2021-11-01",
       "name": "[concat(parameters('sqlInstanceSettings').instanceName, '/AllowAllWindowsAzureIps')]",
       "dependsOn": [
         "[resourceId('Microsoft.Sql/servers', parameters('sqlInstanceSettings').instanceName)]"
