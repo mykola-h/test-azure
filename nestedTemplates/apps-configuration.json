@@ -50,12 +50,6 @@
             "description": "The prefix of the subnetwork where Ekran System is deployed."
         }
       },
-      "languagePacksUrl": {
-        "type": "string",
-        "metadata": {
-            "description": "The URL where language packs can be gotten."
-        }
-      },
       "dscModuleUrl": {
         "type": "string",
         "metadata": {
@@ -93,8 +87,7 @@
               "sqlServerPort": "[parameters('sqlInstanceSettings').port]",
               "sqlServerType": "[if(equals(parameters('sqlInstanceSettings').type, 'AzureSQL'), 'MSSQL', parameters('sqlInstanceSettings').type)]",
               "subNetPrefix": "[parameters('subNetPrefix')]",
-              "language": "[parameters('virtualMachineSettings').vmOsLanguage]",
-              "languagePacksUrl": "[parameters('languagePacksUrl')]"
+              "language": "[parameters('virtualMachineSettings').vmOsLanguage]"
             }
           },
           "protectedSettings": {
